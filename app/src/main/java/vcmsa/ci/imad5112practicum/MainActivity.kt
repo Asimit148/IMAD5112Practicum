@@ -20,7 +20,7 @@ class MainActivity : AppCompatActivity() {
 
         buttonNext.setOnClickListener {
             // create an intent to navigate to the PackageListActivity when the button is clicked.
-            startActivity(Intent(this, PlaylistInput::class.java))
+            startActivity(Intent(this, PlaylistInputScreen::class.java))
         }
 
         buttonExit.setOnClickListener {

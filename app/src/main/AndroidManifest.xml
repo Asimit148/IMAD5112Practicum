@@ -13,6 +13,9 @@
         android:theme="@style/Theme.IMAD5112Practicum"
         tools:targetApi="31">
         <activity
+            android:name=".PlaylistInputScreen"
+            android:exported="false" />
+        <activity
             android:name=".PlaylistInput"
             android:exported="false" />
         <activity
