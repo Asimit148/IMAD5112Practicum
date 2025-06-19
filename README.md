@@ -45,7 +45,8 @@ The app was built to assist users in:
     - `Clear Contents`: Clears input fields.
     - `Exit App`: Exits the app.
 - **Screenshot:**
- 
+ ![image](https://github.com/user-attachments/assets/e9ccd221-522c-4687-98e7-afcc19be4fec)
+
 
 ---
 
