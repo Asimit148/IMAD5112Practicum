@@ -12,10 +12,10 @@ class ActivityDisplay : AppCompatActivity() {
 
     // UI components matching the new XML IDs
     private lateinit var buttonShowAll: Button
-    private lateinit var buttonShowFiltered: Button
+    private lateinit var buttonShowRatings: Button
     private lateinit var buttonBackToHome: Button
-    private lateinit var displayAllItems: TextView
-    private lateinit var displayFilteredItems: TextView
+    private lateinit var displaySongs: TextView
+    private lateinit var displayFilteredSongs: TextView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -24,40 +24,40 @@ class ActivityDisplay : AppCompatActivity() {
 
         // Link Kotlin variables to views using updated XML IDs
         buttonShowAll = findViewById(R.id.buttonShowAll)
-        buttonShowFiltered = findViewById(R.id.buttonShowFiltered)
+        buttonShowRatings = findViewById(R.id.buttonShowRatings)
         buttonBackToHome = findViewById(R.id.buttonBackToHome)
-        displayAllItems = findViewById(R.id.displayAllItems)
-        displayFilteredItems = findViewById(R.id.displayFilteredItems)
+        displaySongs = findViewById(R.id.displaySongs)
+        displayFilteredSongs = findViewById(R.id.displayFilteredSongs)
 
         // Retrieve data passed from ActivityInput using updated key names
-        val dayList = intent.getStringArrayListExtra("dayList")
-        val categoryList = intent.getStringArrayListExtra("categoryList")
-        val quantityList = intent.getIntegerArrayListExtra("quantityList")
+        val titleList = intent.getStringArrayListExtra("titleList")
+        val nameList = intent.getStringArrayListExtra("nameList")
+        val ratingList = intent.getIntegerArrayListExtra("ratingList")
         val commentList = intent.getStringArrayListExtra("commentList")
 
         // Show all items from the packing list
         buttonShowAll.setOnClickListener {
-            if (dayList != null && categoryList != null && quantityList != null && commentList != null) {
-                val fullList = dayList.indices.joinToString("\n") {
-                    "${dayList[it]} (${categoryList[it]}) - ${quantityList[it]}: ${commentList[it]}"
+            if (titleList != null && nameList != null && ratingList != null && commentList != null) {
+                val fullList = titleList.indices.joinToString("\n") {
+                    "${titleList[it]} (${nameList[it]}) - ${ratingList[it]}: ${commentList[it]}"
                 }
-                displayAllItems.text = fullList.ifBlank { "No items added." }
+                displaySongs.text = fullList.ifBlank { "No songs added." }
             } else {
-                displayAllItems.text = "No items added."
+                displaySongs.text = "No songs added."
             }
         }
 
         // Show only items with quantity 2 or more
-        buttonShowFiltered.setOnClickListener {
-            if (dayList != null && quantityList != null) {
-                val filtered = dayList.indices
-                    .filter { quantityList[it] >= 30 }
+        displayFilteredSongs.setOnClickListener {
+            if (titleList != null && ratingList != null) {
+                val filtered = titleList.indices
+                    .filter { ratingList[it] < 5 }
                     .joinToString("\n") {
-                        "${dayList[it]} (Quantity: ${quantityList[it]})"
+                        "${titleList[it]} (Quantity: ${ratingList[it]})"
                     }
-                displayFilteredItems.text = filtered.ifBlank { "No items with quantity ≥ 30 added." }
+                displayFilteredSongs.text = filtered.ifBlank { "No items with < 5 added." }
             } else {
-                displayFilteredItems.text = "No items with quantity ≥ 30 added."
+                displayFilteredSongs.text = "No items with quantity < 5 added."
             }
         }
 

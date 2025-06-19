@@ -50,8 +50,8 @@ class ActivityInput : AppCompatActivity() {
                 return@setOnClickListener
             }
 
-            val quantity = rating.toIntOrNull()
-            if (quantity == null || quantity <= 0) {
+            val rating = rating.toIntOrNull()
+            if (rating == null || rating <= 0) {
                 Toast.makeText(this, "Rating must be a positive number", Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
             }
