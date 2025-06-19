@@ -27,7 +27,7 @@
         android:id="@+id/buttonShowAll"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="Show All List Items"
+        android:text="Show All songs"
         android:backgroundTint="#673AB7"
         android:textColor="#FFFFFF"
         android:layout_marginTop="16dp"
