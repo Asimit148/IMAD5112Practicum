@@ -26,6 +26,7 @@ The app was built to assist users in:
   - A **“Get Started” Button** to navigate to the Input screen.
   - A **“Exit” Button** to close the app.
 - **Screenshot:**
+ ![image](https://github.com/user-attachments/assets/23d57d47-6fe1-45a4-8426-de1873a35693)
 
 
 
@@ -44,6 +45,7 @@ The app was built to assist users in:
     - `Clear Contents`: Clears input fields.
     - `Exit App`: Exits the app.
 - **Screenshot:**
+ 
 
 ---
 
@@ -56,6 +58,8 @@ The app was built to assist users in:
   - **Two TextViews** to display output.
   - A **Back Button** to return to the Input screen.
 - **Screenshot:**
+  ![image](https://github.com/user-attachments/assets/ac035efb-f692-4b1c-b620-7e2480de056e)
+
   
 
 
