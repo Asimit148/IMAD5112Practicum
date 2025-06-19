@@ -1,20 +1,20 @@
-# 😊 Daily Mood and Journal Tracker App
+# 🎵 Music Playlist Manager App
 
 ### 👤 Author: Asimit Shrivastava ST10471627
 
 ---
 
 ## 📱 Overview of the App
-The **Daily Mood and Journal Tracker App** is a simple and elegant Android application designed to help users record, monitor, and reflect on their emotional wellbeing. It offers an intuitive user interface with three streamlined screens—Welcome, Input, and Display—allowing users to input moods, sleep data, and journal notes, and later view or filter that information.
+The **Music Playlist Manager App** is a simple and intuitive Android application designed to help users log, manage, and view their favorite music playlists. It includes three main screens—Welcome, Input, and Display—which provide a smooth user experience for entering and organizing musical data.
 
 ---
 
 ## 🎯 Purpose of the App
-The app was built to assist users in:
-- Monitoring their daily emotional states.
-- Tracking sleep duration.
-- Writing short journal reflections.
-- Identifying trends and emotions that may be linked to lack of sleep or specific mood types.
+This app allows users to:
+- Log music playlist entries with title, genre, duration, and description.
+- Navigate between different screens to input and view data.
+- Filter music based on specific criteria such as duration.
+- Build a personalized music archive over time.
 
 ---
 
@@ -22,121 +22,112 @@ The app was built to assist users in:
 
 ### 🖼️ Welcome Screen
 - **UI Elements:**
-  - A large **TextView** with a welcoming message.
-  - A **“Get Started” Button** to navigate to the Input screen.
-  - A **“Exit” Button** to close the app.
+  - **TextView** with a friendly welcome message.
+  - **“Get Started” Button**: Navigates to the Input screen.
+  - **“Exit” Button**: Closes the app using `finishAffinity()`.
 - **Screenshot:**
- ![image](https://github.com/user-attachments/assets/23d57d47-6fe1-45a4-8426-de1873a35693)
-
-
+  ![Welcome Screen](https://github.com/user-attachments/assets/23d57d47-6fe1-45a4-8426-de1873a35693)
 
 ---
 
 ### 📝 Input Screen
 - **UI Elements:**
   - **Four EditTexts** for:
-    - Mood
-    - Mood Type
-    - Sleep Hours (with numeric validation)
-    - Journal Entry
-  - **Four Buttons**:
-    - `Add to List`: Validates and stores entry data.
-    - `Go to Display Screen`: Navigates to Mood Display screen.
-    - `Clear Contents`: Clears input fields.
-    - `Exit App`: Exits the app.
+    - Playlist Title
+    - Genre
+    - Duration (minutes – numeric only)
+    - Description or Notes
+  - **Buttons**:
+    - `Add to List`: Saves the playlist item after validating inputs.
+    - `Go to Display Screen`: Navigates to the Display screen.
+    - `Clear Contents`: Clears all text fields.
+    - `Exit App`: Exits the application.
 - **Screenshot:**
- ![image](https://github.com/user-attachments/assets/e9ccd221-522c-4687-98e7-afcc19be4fec)
-
+  ![Input Screen](https://github.com/user-attachments/assets/e9ccd221-522c-4687-98e7-afcc19be4fec)
 
 ---
 
 ### 📊 Display Screen
 - **UI Elements:**
-  - A **header TextView** ("Display List")
-  - **Two Buttons**:
-    - `Show All Emotions`: Displays all entries.
-    - `Show entries with sleep < 6 hours`: Filters entries based on sleep hours.
-  - **Two TextViews** to display output.
-  - A **Back Button** to return to the Input screen.
+  - **TextView header**: "Playlist Display"
+  - **Buttons**:
+    - `Show All Playlists`: Displays all saved items.
+    - `Filter by Duration > 5 min`: Filters and displays playlists longer than 5 minutes.
+  - **Two TextViews** to show results.
+  - **Back Button**: Returns to the Input screen.
 - **Screenshot:**
-  ![image](https://github.com/user-attachments/assets/ac035efb-f692-4b1c-b620-7e2480de056e)
-
-  
-
-
+  ![Display Screen](https://github.com/user-attachments/assets/ac035efb-f692-4b1c-b620-7e2480de056e)
 
 ---
 
 ## 🎨 Design Considerations
 
 ### 🔘 Buttons
-- Consistent and purposeful color themes:
-  - Green for **Add**
-  - Blue for **Navigation**
-  - Red for **Exit/Clear**
-- Each button has a clearly defined role and action:
-  - Welcome screen → Input screen (via “Get Started”)
-  - Input screen → Display screen (via “Go to Display Screen”)
-  - Exit buttons use `finishAffinity()` to close the app properly.
+- **Color themes**:
+  - Green: Save actions (e.g., Add to List)
+  - Blue: Navigation (e.g., Go to Display)
+  - Red: Exit or Clear
+- Button Actions:
+  - From Welcome → Input: “Get Started”
+  - From Input → Display: “Go to Display Screen”
+  - All screens: “Exit” calls `finishAffinity()` to safely close app.
 
 ### ✍️ EditTexts
-- Found on the Input screen:
-  - Designed with hints to guide user input.
-  - Padded and background-tinted for visibility.
-  - `inputSleepHours` is numeric to restrict to numbers only.
-  
-### 📝 TextViews
-- Welcome message
-- Form title
-- Display headers
-- Outputs for emotion and sleep logs
+- On the Input screen:
+  - Hints provided for clarity.
+  - Backgrounds and paddings added for comfort.
+  - `Duration` input is restricted to numeric format.
 
+### 📝 TextViews
+- Used for:
+  - App headers
+  - Field labels
+  - Output display areas
+- Styled with readable fonts and appropriate colors.
 
 ---
 
 ## 🛠️ Usability and Error Handling
-- Robust **input validation**:
-  - Ensures fields are not empty.
-  - Prevents invalid or non-numeric entries for sleep hours.
-- Clear **Toast messages** guide the user through errors or success.
-- Prevents app crashes from malformed inputs.
+- Input validation ensures:
+  - No fields are left empty.
+  - Duration field accepts only numeric input.
+- **Toast messages** inform the user:
+  - When inputs are incorrect.
+  - When data is successfully saved.
 
 ---
 
 ## 🎨 Personal Design Inspiration and Touches
-- **Custom background images** were created for each screen, matching the theme of emotional tracking and reflection.
-- **Color palette**:
-  - Calming blues and greens.
-  - Contrasting reds for alerts/actions.
-- All UI components were styled for accessibility and comfort.
-- Every layout was crafted with a consistent design language.
-
+- Each screen uses a **custom background image** relevant to music.
+- **Color scheme**:
+  - Calming blues, music-themed purples, and action-driven reds.
+- Attention to visual balance:
+  - Consistent layout spacing
+  - Matching button shapes and rounded corners
+- Screenshots reflect a consistent and polished look across the app.
 
 ---
 
 ## 🔁 Development Workflow
 
 ### 🧠 Version Control
-- The app's source code was tracked using **Git**.
-- Each stage of development was committed with meaningful messages.
+- Used **Git** for local tracking of all code changes.
 
 ### 🌐 GitHub
-- Hosted in a remote GitHub repository.
-- Allows easy collaboration, backup, and sharing.
+- Hosted the code on **GitHub** for cloud backup and collaboration.
 
 ### 🤖 GitHub Actions
-- Integrated **CI/CD workflows** for potential builds and checks.
-- Future deployment steps can be automated with Actions.
+- Automated build and test checks (if extended in future).
+- Ready for integration of CI/CD deployment pipelines.
 
-### ✅ Benefits:
-- Easy rollback and versioning
-- Visibility into project history
-- Reliable collaboration and error tracking
+### ✅ Key Benefits
+- Transparent code history and easy collaboration
+- Ability to revert to previous versions
+- Automation of workflows for quality assurance
 
 ---
 
 ## ✅ Conclusion
-The **Daily Mood and Journal Tracker App** is a well-rounded tool that blends intuitive UI design with meaningful functionality. With simple navigation, visual appeal, and robust data handling, it encourages users to build healthy habits through consistent emotional tracking.
+The **Music Playlist Manager App** is a sleek and functional Android application that merges user experience with musical personalization. It was designed with attention to both visual aesthetics and robust functionality, ensuring users can enjoy building and managing their playlists seamlessly.
 
 ---
-
