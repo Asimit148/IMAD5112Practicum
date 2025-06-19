@@ -73,7 +73,7 @@ class ActivityInput : AppCompatActivity() {
 
         // View list button
         buttonView.setOnClickListener {
-            val intent = Intent(this, PlaylistDispay::class.java)
+            val intent = Intent(this, PlaylistDispayScreen::class.java)
             intent.putStringArrayListExtra("titleList", titleList)
             intent.putStringArrayListExtra("nameList", nameList)
             intent.putIntegerArrayListExtra("quantityList", ratingList)
